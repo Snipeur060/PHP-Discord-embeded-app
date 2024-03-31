@@ -20,4 +20,6 @@
 
 <p>2. Change app-id and secret id</p>
 
-<p>3. Good job</p>
+<p>3. Add url mapping /unpk redirect to https://unpkg.com/  and change in util/sdk.php this line  https://unpkg.com/@discord/embedded-app-sdk@1.1.0/output/index.mjs BY /unpk/@discord/embedded-app-sdk@1.1.0/output/index.mjs</p>
+
+<p>5. Good job</p>
