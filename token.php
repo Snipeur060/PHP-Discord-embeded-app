@@ -59,12 +59,14 @@ if (isset($_REQUEST['code'])) {
             $userInfo = json_decode($userInfoResponse, true);
 
             // Vérifier si les informations de l'utilisateur ont été récupérées avec succès
-            if (isset($userInfo['id'])) {
+           if (isset($userInfo['id'])) {
                 // Enregistrer les informations de l'utilisateur en session
-                $_SESSION['userId'] = $userInfo['id'];
-                $_SESSION['username'] = $userInfo['username'];
+                $_SESSION['v2userId'] = $userInfo['id'];
+                $_SESSION['v2username'] = $userInfo['username'];
+				$_SESSION['v2avatar'] = $userInfo['avatar'];
+				$_SESSION['v2tokenaccess'] = $accessToken;
 
-                // Renvoyer le jeton d'accès (ça serait bête de pas laisser le sdk s'initialiser)
+                // Renvoyer le jeton d'accès
                 echo json_encode(array('access_token' => $accessToken));
             } else {
                 // Gérer l'erreur si les informations de l'utilisateur n'ont pas été récupérées
