@@ -1,5 +1,5 @@
 <script type='module' async>
-const { DiscordSDK } = await import('https://unpkg.com/@discord/embedded-app-sdk@1.1.0/output/index.mjs');
+const { DiscordSDK } = await import('https://unpkg.com/@discord/embedded-app-sdk@1.4.3/output/index.mjs');
   const discordSdk = new DiscordSDK('app-id');
 
   console.log('Waiting for DiscordSDK to be ready...');
@@ -25,7 +25,7 @@ async function getCodeAndAuthenticate() {
     console.log('Code d\'autorisation :', code);
 
     // Notre serveur d'auth en php
-    const tokenResponse = await fetch(`/token.php?code=${encodeURIComponent(code)}`);
+    const tokenResponse = await fetch(`/.proxy/token.php?code=${encodeURIComponent(code)}`);
     if (!tokenResponse.ok) {
       throw new Error('Erreur lors de la récupération du jeton d\'accès');
     }
