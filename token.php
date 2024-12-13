@@ -15,6 +15,7 @@ if (isset($_REQUEST['code'])) {
         'client_id' => "app-id",
         'client_secret' => "secret-client",
         'grant_type' => 'authorization_code',
+        'redirect_uri' => 'https://url.truc/',
         'code' => $code
     );
 
@@ -63,8 +64,8 @@ if (isset($_REQUEST['code'])) {
                 // Enregistrer les informations de l'utilisateur en session
                 $_SESSION['v2userId'] = $userInfo['id'];
                 $_SESSION['v2username'] = $userInfo['username'];
-				$_SESSION['v2avatar'] = $userInfo['avatar'];
-				$_SESSION['v2tokenaccess'] = $accessToken;
+		$_SESSION['v2avatar'] = $userInfo['avatar'];
+		$_SESSION['v2tokenaccess'] = $accessToken;
 
                 // Renvoyer le jeton d'accès
                 echo json_encode(array('access_token' => $accessToken));
