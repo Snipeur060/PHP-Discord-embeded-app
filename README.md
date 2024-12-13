@@ -22,6 +22,8 @@
 
 <p>3. Add url mapping /unpk redirect to https://unpkg.com/  and change in util/sdk.php this line  https://unpkg.com/@discord/embedded-app-sdk@1.1.0/output/index.mjs BY /unpk/@discord/embedded-app-sdk@1.1.0/output/index.mjs</p>
 
-<p>4. Read all the errors</p>
+<p>4. Change uri in sdk.php to you redirect_uri</p>
 
-<p>5. Good job</p>
+<p>5. Read all the errors</p>
+
+<p>6. Good job</p>
